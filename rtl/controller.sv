@@ -11,7 +11,7 @@ module controller(input logic [6:0] op,
     
     logic [1:0] ALUOp;
     logic Branch;
-    decoder md(op, ResultSrc, MemWrite, Branch,
+    maindec md(op, ResultSrc, MemWrite, Branch,
                    ALUSrc, RegWrite, Jump, ImmSrc, ALUOp);
 
     aludec ad(op[5], funct3, funct7b5, ALUOp, ALUControl);
